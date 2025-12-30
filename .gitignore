@@ -1,0 +1,56 @@
+# compiled output
+/dist
+/node_modules
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# secrets & environment
+.env
+.env.*
+!.env.example
+.environ
+/secrets/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Documentation
+/documentation
+SRS.pdf
+OIDC.md
+
+# Prisma
+/generated
+
+# Test coverage
+/coverage
+/.nyc_output
+
+# Build & cache
+*.tsbuildinfo
+.eslintcache
+.prettiercache
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
