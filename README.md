@@ -37,9 +37,6 @@ Backend d'authentification pour le projet Unity Shop, conçu pour intégration a
    # Database (Postgres)
    DATABASE_URL="postgresql://admin:password123@localhost:5432/com_auth_db?schema=public"
 
-   # Security
-   JWT_SECRET="votre_super_secret_key"
-
    # Social Auth (Optionnel en dev, requis pour prod)
    GOOGLE_CLIENT_ID="votre_client_id_google"
    APPLE_CLIENT_ID="votre_service_id_apple"
@@ -64,7 +61,7 @@ Backend d'authentification pour le projet Unity Shop, conçu pour intégration a
    ```
 
 6. **Générer les Clés OIDC (RSA)**
-   Génère une paire de clés dans `secrets/` pour la signature des JWT.
+   Génère les clés et affiche les variables à copier dans votre `.env`.
    ```bash
    npm run generate:keys
    ```
@@ -72,12 +69,7 @@ Backend d'authentification pour le projet Unity Shop, conçu pour intégration a
    npm run generate:keys
    ```
 
-7. **Générer le Certificat HTTPS (Local)**
-   Génère un certificat auto-signé pour le développement local.
-   ```bash
-   npm run generate:ssl
-   ```
-   Activez ensuite `HTTPS_ENABLED=true` dans `.env`.
+
 
 ## ▶️ Commandes
 
@@ -87,8 +79,8 @@ Backend d'authentification pour le projet Unity Shop, conçu pour intégration a
 | `npm run build` | Compile le projet (dist/) |
 | `npm run start:prod` | Lance le serveur compilé |
 | `npm test` | Lance les tests unitaires et E2E |
-| `npm run generate:keys` | Génère les clés RSA pour OIDC |
-| `npm run generate:ssl` | Génère le certificat SSL local |
+| `npm run generate:keys` | Génère les clés OIDC pour le `.env` |
+
 
 ## 🏗️ Structure du Projet
 

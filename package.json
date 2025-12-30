@@ -12,8 +12,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "generate:keys": "ts-node scripts/generate-keys.ts",
-    "generate:ssl": "ts-node scripts/generate-ssl.ts"
+    "generate:keys": "ts-node scripts/generate-keys.ts"
   },
   "keywords": [],
   "author": "",
@@ -29,7 +28,6 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^25.0.3",
     "@types/passport-jwt": "^4.0.1",
-    "@types/selfsigned": "^2.0.4",
     "@types/supertest": "^6.0.3",
     "jest": "^30.2.0",
     "prisma": "^7.2.0",
@@ -63,7 +61,6 @@
     "pg": "^8.13.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2",
-    "selfsigned": "^5.4.0",
     "swagger-ui-express": "^5.0.1"
   }
 }

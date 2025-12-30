@@ -1,11 +1,7 @@
-import * as fs from 'fs-extra';
-import * as path from 'path';
 import * as crypto from 'crypto';
 
-const SECRETS_DIR = path.join(__dirname, '..', 'secrets');
-
 async function generateKeys() {
-    await fs.ensureDir(SECRETS_DIR);
+
 
     const keyId = crypto.randomUUID();
     console.log(`Generating RSA Key Pair (kid: ${keyId})...`);
@@ -22,16 +18,14 @@ async function generateKeys() {
         },
     });
 
-    const timestamp = Date.now();
-    const privatePath = path.join(SECRETS_DIR, `${timestamp}_${keyId}.private.pem`);
-    const publicPath = path.join(SECRETS_DIR, `${timestamp}_${keyId}.public.pem`);
+    // Convert to Base64 (single line) for .env
+    const privateBase64 = Buffer.from(privateKey).toString('base64');
+    const publicBase64 = Buffer.from(publicKey).toString('base64');
 
-    await fs.writeFile(privatePath, privateKey);
-    await fs.writeFile(publicPath, publicKey);
-
-    console.log(`Keys generated successfully:`);
-    console.log(`- Private: ${privatePath}`);
-    console.log(`- Public: ${publicPath}`);
+    console.log(`\n# Copy these lines to your .env file:`);
+    console.log(`OIDC_KEY_ID="${keyId}"`);
+    console.log(`OIDC_PRIVATE_KEY_BASE64="${privateBase64}"`);
+    console.log(`OIDC_PUBLIC_KEY_BASE64="${publicBase64}"`);
 }
 
 generateKeys().catch(console.error);
