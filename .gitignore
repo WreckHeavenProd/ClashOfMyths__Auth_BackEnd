@@ -11,11 +11,11 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # secrets & environment
-.env
-.env.*
-!.env.example
-.environ
-/secrets/
+# .env
+# .env.*
+# !.env.example
+# .environ
+# /secrets/
 
 # IDEs
 .vscode/
