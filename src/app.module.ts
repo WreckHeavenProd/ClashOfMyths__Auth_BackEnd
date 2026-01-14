@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { OidcModule } from './oidc/oidc.module';
+import { AppController } from './app.controller';
 
 @Module({
     imports: [
@@ -11,7 +12,7 @@ import { OidcModule } from './oidc/oidc.module';
         OidcModule,
         AuthModule,
     ],
-    controllers: [],
+    controllers: [AppController],
     providers: [],
 })
 export class AppModule { }
